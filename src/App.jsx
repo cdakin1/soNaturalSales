@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
-import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router';
+import React from 'react';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <div className="sidebar">
-        <p className="App-intro">
-           Southern Natural Sales
-           <div class="header">
-             <span><Link to="/home">Home</Link></span>
-             <span><Link to="/calendar">Calendar</Link></span>
-            </div>
-           {this.props.children}
-         </p>
+      <div className="app">
+        {this.props.children}
       </div>
     );
   }
 }
+
+App.propTypes = { children: React.PropTypes.object };
 
 export default App;
